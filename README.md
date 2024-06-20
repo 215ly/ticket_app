@@ -14,6 +14,20 @@ flutter开发的一个机票信息APP
     - [home_screens.dart](lib%2Fscreens%2Fhome_screens.dart)：首页页面文件
     - [all_tickets.dart](lib%2Fscreens%2Fall_tickets.dart)：显示全部机票页面
 
+ticket_app/
+│
+├── dir1/
+│   ├── file1.ext
+│   └── file2.ext
+│
+├── dir2/
+│   ├── sub-dir1/
+│   │   └── file3.ext
+│   └── sub-dir2/
+│
+└── dir3/
+├── file4.ext
+└── file5.ext
 
 # 其他说明
 - 消除自带的注释描述
