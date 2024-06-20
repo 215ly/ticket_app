@@ -14,7 +14,7 @@ flutter开发的一个机票信息APP
     - [home_screens.dart](lib%2Fscreens%2Fhome_screens.dart)：首页页面文件
     - [all_tickets.dart](lib%2Fscreens%2Fall_tickets.dart)：显示全部机票页面
 
-Project Directory Structure:
+```
   ticket_app/
   │
   ├── dir1/
@@ -29,7 +29,7 @@ Project Directory Structure:
   └── dir3/
   ├── file4.ext
   └── file5.ext
-
+```
 # 其他说明
 - 消除自带的注释描述
   - `//.*\n` ：在文件类进行替换，点击右侧启动正则图标，点击替换
