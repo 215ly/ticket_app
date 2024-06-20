@@ -1,0 +1,40 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:ticket_app/base/res/styles/app_styles.dart';
+import 'package:ticket_app/screens/all_tickets.dart';
+
+class AppDoubleText extends StatelessWidget {
+  final String bigText;
+  final String smallText;
+
+  const AppDoubleText(
+      {super.key, required this.bigText, required this.smallText});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          bigText,
+          style: AppStyles.headLineStyle3,
+        ),
+        InkWell(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (BuildContext context) => const AllTickets(),
+              ),
+            );
+          },
+          child: Text(
+            smallText,
+            style: AppStyles.headLineStyle1
+                .copyWith(color: AppStyles.primaryColor),
+          ),
+        ),
+      ],
+    );
+  }
+}
