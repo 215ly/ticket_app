@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ticket_app/base/res/styles/app_styles.dart';
 import 'package:ticket_app/base/res/widgets/app_colum_text_layout.dart';
@@ -11,7 +10,9 @@ import 'package:ticket_app/base/res/widgets/text_style_third.dart';
 class TicketView extends StatelessWidget {
   final Map<String, dynamic> ticket;
 
-  const TicketView({super.key, required this.ticket});
+  final bool wholeScreen;
+
+  const TicketView({super.key, required this.ticket, this.wholeScreen = false});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,7 @@ class TicketView extends StatelessWidget {
       width: size.width * 0.85,
       height: 179,
       child: Container(
-        margin: const EdgeInsets.only(right: 16),
+        margin: EdgeInsets.only(right: wholeScreen == true ? 0 : 16),
         child: Column(
           children: [
             Container(
