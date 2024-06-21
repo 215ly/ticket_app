@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../base/res/widgets/ticket_view.dart';
-import '../base/utils/all.json.dart';
+import '../../base/res/widgets/ticket_view.dart';
+import '../../base/utils/all.json.dart';
 
 class AllTickets extends StatelessWidget {
   const AllTickets({super.key});
