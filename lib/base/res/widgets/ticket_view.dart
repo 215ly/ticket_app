@@ -17,7 +17,7 @@ class TicketView extends StatelessWidget {
     super.key,
     required this.ticket,
     this.wholeScreen = false,
-    this.isColor = null,
+    this.isColor,
   });
 
   @override

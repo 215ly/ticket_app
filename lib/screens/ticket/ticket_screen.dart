@@ -9,28 +9,48 @@ import 'package:ticket_app/screens/ticket/widgets/ticket_positioned_circles.dart
 import '../../base/res/widgets/app_colum_text_layout.dart';
 import '../search/widgets/app_ticket_tabs.dart';
 
-class TicketScreen extends StatelessWidget {
+class TicketScreen extends StatefulWidget {
   const TicketScreen({super.key});
+
+  @override
+  State<TicketScreen> createState() => _TicketScreenState();
+}
+
+class _TicketScreenState extends State<TicketScreen> {
+  late int ticketIndex = 0;
+
+  @override
+  void didChangeDependencies() {
+    if (ModalRoute.of(context)!.settings.arguments != null) {
+      var args = ModalRoute.of(context)!.settings.arguments as Map;
+      ticketIndex = args["index"];
+    }
+    super.didChangeDependencies();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppStyles.bgColor,
+      appBar: AppBar(
+        title: const Text("Tickets"),
+        backgroundColor: AppStyles.bgColor,
+      ),
       body: Stack(
         children: [
           ListView(
-            padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+            padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 20),
             children: [
-              const SizedBox(
-                height: 40,
-              ),
-              Text(
-                "Tickets",
-                style: AppStyles.headLineStyle2,
-              ),
-              const SizedBox(
-                height: 20,
-              ),
+              // const SizedBox(
+              //   height: 40,
+              // ),
+              // Text(
+              //   "Tickets",
+              //   style: AppStyles.headLineStyle2,
+              // ),
+              // const SizedBox(
+              //   height: 20,
+              // ),
               const AppTicketTabs(
                 firstTab: "Upcoming Flights",
                 secondTab: "Previous",
@@ -39,7 +59,7 @@ class TicketScreen extends StatelessWidget {
                 height: 20,
               ),
               TicketView(
-                ticket: ticketList[0],
+                ticket: ticketList[ticketIndex],
                 wholeScreen: true,
                 isColor: true,
               ),
@@ -169,13 +189,13 @@ class TicketScreen extends StatelessWidget {
                 height: 20,
               ),
               TicketView(
-                ticket: ticketList[0],
+                ticket: ticketList[ticketIndex],
                 wholeScreen: true,
               )
             ],
           ),
-          const TicketPositionedCircles(pos: true,),
-          const TicketPositionedCircles(pos: null,)
+          //const TicketPositionedCircles(pos: true,),
+          //const TicketPositionedCircles(pos: null,)
         ],
       ),
     );
